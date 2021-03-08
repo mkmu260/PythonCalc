@@ -1,3 +1,7 @@
+#calculator.py
+#A simple calculator app
+#Manoj K, 8/3/21
+
 print("Welcome to Manoj's Calculator V69")
 exitProgram = False
 while(exitProgram == False):
