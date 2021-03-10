@@ -1,11 +1,7 @@
 #calculator.py
 #A simple calculator app
 #Manoj K, 8/3/21
-num = '0'
-num = num + '1'
-print(num)
-num = int(num)
-print(num)
+
 print("Welcome to Manoj's Calculator V69")
 exitProgram = False
 while(exitProgram == False):
