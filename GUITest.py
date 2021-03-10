@@ -178,7 +178,8 @@ def buttonEqualPressed():
         elif calcType == '/':
             output = firstNum / secondNum #Add ability to continously add etc numbers
         answer = QMessageBox()
-        answer.setText(str(output))
+        answerMessage = str(firstNumber) + ' '  + calcType + str(secondNumber) + ' = ' + str(output)
+        answer.setText(answerMessage)
         answer.exec()
         isFirstNumber = True
     else:
