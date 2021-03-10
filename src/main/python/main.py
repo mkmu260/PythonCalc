@@ -1,8 +1,7 @@
-#GUITest.py
-#Started off as a way of testing PyQt5, now is a functioning graphical application calculator
-#Manoj K, 11/03/2021
+from fbs_runtime.application_context.PyQt5 import ApplicationContext
+from PyQt5.QtWidgets import QMainWindow, QApplication, QLabel, QGridLayout, QWidget, QPushButton, QMessageBox
 
-from PyQt5.QtWidgets import QApplication, QLabel, QGridLayout, QWidget, QPushButton, QMessageBox
+import sys
 
 def button1Pressed(): #Need to find way to read button string so that one func can be used for all
     global isFirstNumber
@@ -189,67 +188,68 @@ def buttonEqualPressed():
         alert.setText('You haven''t chosen an operation and/or a second number')
         alert.exec()
 
-#Main Routine
+if __name__ == '__main__':
+    appctxt = ApplicationContext()       # 1. Instantiate ApplicationContext
+    firstNumber = '0' #Could pass and return these rather than using as global var
+    secondNumber = '0'
+    isFirstNumber = True
 
-firstNumber = '0' #Could pass and return these rather than using as global var
-secondNumber = '0'
-isFirstNumber = True
+    app = QApplication([])
+    window = QWidget() 
+    layout = QGridLayout()
 
-app = QApplication([])
-window = QWidget() 
-layout = QGridLayout()
+    button1 = QPushButton('1')
+    button2 = QPushButton('2')
+    button3 = QPushButton('3')
+    buttonPlus = QPushButton('+')
+    button4 = QPushButton('4')
+    button5 = QPushButton('5')
+    button6 = QPushButton('6')
+    buttonMinus = QPushButton('-')
+    button7 = QPushButton('7')
+    button8 = QPushButton('8')
+    button9 = QPushButton('9')
+    buttonMult = QPushButton('*')
+    button0 = QPushButton('0')
+    buttonDiv = QPushButton('/')
+    buttonEqual = QPushButton('=')
 
-button1 = QPushButton('1')
-button2 = QPushButton('2')
-button3 = QPushButton('3')
-buttonPlus = QPushButton('+')
-button4 = QPushButton('4')
-button5 = QPushButton('5')
-button6 = QPushButton('6')
-buttonMinus = QPushButton('-')
-button7 = QPushButton('7')
-button8 = QPushButton('8')
-button9 = QPushButton('9')
-buttonMult = QPushButton('*')
-button0 = QPushButton('0')
-buttonDiv = QPushButton('/')
-buttonEqual = QPushButton('=')
+    layout.addWidget(button1, 0, 0)
+    layout.addWidget(button2, 0, 1)
+    layout.addWidget(button3, 0, 2)
+    layout.addWidget(buttonPlus, 0, 3)
+    layout.addWidget(button4, 1, 0)
+    layout.addWidget(button5, 1, 1)
+    layout.addWidget(button6, 1, 2)
+    layout.addWidget(buttonMinus, 1, 3)
+    layout.addWidget(button7, 2, 0)
+    layout.addWidget(button8, 2, 1)
+    layout.addWidget(button9, 2, 2)
+    layout.addWidget(buttonMult, 2, 3)
+    layout.addWidget(button0, 3, 0)
+    layout.addWidget(buttonDiv, 3, 1)
+    layout.addWidget(buttonEqual, 3, 2)
 
-layout.addWidget(button1, 0, 0)
-layout.addWidget(button2, 0, 1)
-layout.addWidget(button3, 0, 2)
-layout.addWidget(buttonPlus, 0, 3)
-layout.addWidget(button4, 1, 0)
-layout.addWidget(button5, 1, 1)
-layout.addWidget(button6, 1, 2)
-layout.addWidget(buttonMinus, 1, 3)
-layout.addWidget(button7, 2, 0)
-layout.addWidget(button8, 2, 1)
-layout.addWidget(button9, 2, 2)
-layout.addWidget(buttonMult, 2, 3)
-layout.addWidget(button0, 3, 0)
-layout.addWidget(buttonDiv, 3, 1)
-layout.addWidget(buttonEqual, 3, 2)
-
-button1.clicked.connect(button1Pressed)
-button2.clicked.connect(button2Pressed)
-button3.clicked.connect(button3Pressed)
-button4.clicked.connect(button4Pressed)
-button5.clicked.connect(button5Pressed)
-button6.clicked.connect(button6Pressed)
-button7.clicked.connect(button7Pressed)
-button8.clicked.connect(button8Pressed)
-button9.clicked.connect(button9Pressed)
-button0.clicked.connect(button0Pressed)
-buttonPlus.clicked.connect(buttonPlusPressed)
-buttonMinus.clicked.connect(buttonMinusPressed)
-buttonMult.clicked.connect(buttonMultPressed)
-buttonDiv.clicked.connect(buttonDivPressed)
-buttonEqual.clicked.connect(buttonEqualPressed)
+    button1.clicked.connect(button1Pressed)
+    button2.clicked.connect(button2Pressed)
+    button3.clicked.connect(button3Pressed)
+    button4.clicked.connect(button4Pressed)
+    button5.clicked.connect(button5Pressed)
+    button6.clicked.connect(button6Pressed)
+    button7.clicked.connect(button7Pressed)
+    button8.clicked.connect(button8Pressed)
+    button9.clicked.connect(button9Pressed)
+    button0.clicked.connect(button0Pressed)
+    buttonPlus.clicked.connect(buttonPlusPressed)
+    buttonMinus.clicked.connect(buttonMinusPressed)
+    buttonMult.clicked.connect(buttonMultPressed)
+    buttonDiv.clicked.connect(buttonDivPressed)
+    buttonEqual.clicked.connect(buttonEqualPressed)
 
 
-window.setLayout(layout)
-window.show()
-#label = QLabel('Hello World!')
-#label.show()
-app.exec_()
+    window.setLayout(layout)
+    window.show()
+    app.exec_()
+
+    exit_code = appctxt.app.exec_()      # 2. Invoke appctxt.app.exec_()
+    sys.exit(exit_code)
