@@ -181,7 +181,7 @@ def buttonEqualPressed():
         answerMessage = str(firstNumber) + ' '  + calcType + str(secondNumber) + ' = ' + str(output)
         answer.setText(answerMessage)
         answer.exec()
-        isFirstNumber = True
+        isFirstNumber = True #Add clear button. May also clash with formatting (int + str). Could resolve by converting back to string after calcs
         firstNumber = '0'
         secondNumber = '0'
     else:
