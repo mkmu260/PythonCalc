@@ -182,6 +182,8 @@ def buttonEqualPressed():
         answer.setText(answerMessage)
         answer.exec()
         isFirstNumber = True
+        firstNumber = '0'
+        secondNumber = '0'
     else:
         alert = QMessageBox()
         alert.setText('You haven''t chosen an operation and/or a second number')
