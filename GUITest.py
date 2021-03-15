@@ -8,6 +8,7 @@ def button1Pressed(): #Need to find way to read button string so that one func c
     global isFirstNumber
     global firstNumber
     global secondNumber
+    global displayLabel = QLabel('1')
 
     if(isFirstNumber):
         firstNumber = firstNumber + '1'
@@ -18,6 +19,7 @@ def button2Pressed():
     global isFirstNumber
     global firstNumber
     global secondNumber
+    global displayLabel = QLabel('2')
 
     if(isFirstNumber):
         firstNumber = firstNumber + '2'
@@ -28,7 +30,8 @@ def button3Pressed():
     global isFirstNumber
     global firstNumber
     global secondNumber
-    
+    global displayLabel = QLabel('3')
+
     if(isFirstNumber):
         firstNumber = firstNumber + '3'
     else:
@@ -38,6 +41,7 @@ def button4Pressed():
     global isFirstNumber
     global firstNumber
     global secondNumber
+    global displayLabel = QLabel('4')
     
     if(isFirstNumber):
         firstNumber = firstNumber + '4'
@@ -48,7 +52,8 @@ def button5Pressed():
     global isFirstNumber
     global firstNumber
     global secondNumber
-    
+    global displayLabel = QLabel('5')
+
     if(isFirstNumber):
         firstNumber = firstNumber + '5'
     else:
@@ -58,6 +63,7 @@ def button6Pressed():
     global isFirstNumber
     global firstNumber
     global secondNumber
+    global displayLabel = QLabel('6')
     
     if(isFirstNumber):
         firstNumber = firstNumber + '6'
@@ -68,6 +74,7 @@ def button7Pressed():
     global isFirstNumber
     global firstNumber
     global secondNumber
+    global displayLabel = QLabel('7')
     
     if(isFirstNumber):
         firstNumber = firstNumber + '7'
@@ -78,6 +85,7 @@ def button8Pressed():
     global isFirstNumber
     global firstNumber
     global secondNumber
+    global displayLabel = QLabel('8')
     
     if(isFirstNumber):
         firstNumber = firstNumber + '8'
@@ -88,6 +96,7 @@ def button9Pressed():
     global isFirstNumber
     global firstNumber
     global secondNumber
+    global displayLabel = QLabel('9')
     
     if(isFirstNumber):
         firstNumber = firstNumber + '9'
@@ -98,6 +107,7 @@ def button0Pressed():
     global isFirstNumber
     global firstNumber
     global secondNumber
+    global displayLabel = QLabel('0') #INstead update QLabel with firstNumber/secondNumber to display full number
     
     if(isFirstNumber):
         firstNumber = firstNumber + '0'
@@ -214,7 +224,9 @@ buttonMult = QPushButton('*')
 button0 = QPushButton('0')
 buttonDiv = QPushButton('/')
 buttonEqual = QPushButton('=')
+displayLabel = QLabel("Test")
 
+layout.addWidget(displayLabel, 3, 3)
 layout.addWidget(button1, 0, 0)
 layout.addWidget(button2, 0, 1)
 layout.addWidget(button3, 0, 2)

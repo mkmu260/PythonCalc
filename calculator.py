@@ -2,6 +2,9 @@
 #A simple calculator app
 #Manoj K, 8/3/21
 
+#import os
+#clear = lambda: os #clear
+
 print("Welcome to Manoj's Calculator V69")
 exitProgram = False
 while(exitProgram == False):
